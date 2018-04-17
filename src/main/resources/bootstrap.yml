@@ -63,19 +63,19 @@ eureka:
 zuul:
   prefix: /api/v2
   routes:
-    batch:
+    hydra-batch-service:
       path: /batches/**
       stripPrefix: false
       serviceId: hydra-batch-service
-    user:
+    hydra-user-service:
       path: /users/**
       stripPrefix: false
       serviceId: hydra-user-service
-    topic:
+    hydra-topic-service:
       path: /topics/**
       stripPrefix: false
       serviceId: hydra-topic-service
-    curriculum:
+    hydra-curriculum-service:
       path: /curricula/**
       stripPrefix: false
       serviceId: hydra-curriculum-service
