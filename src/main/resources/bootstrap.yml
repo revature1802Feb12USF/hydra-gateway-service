@@ -68,6 +68,7 @@ eureka:
 
 zuul:
   prefix: /api/v2
+  stripPrefix: true
   routes:
     hydra-batch-service:
       path: /batches/**
