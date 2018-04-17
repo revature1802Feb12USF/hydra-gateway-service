@@ -53,33 +53,24 @@ spring:
       uri: https://hydra-config-service.cfapps.io/
 
 server:
-  port: 0
+  port: 80
 
 eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    statusPageUrl: https://${eureka.hostname}/info
+    healthCheckUrl: https://${eureka.hostname}/health
+    homePageUrl: https://${eureka.hostname}/
+    nonSecurePort: 80
   client:
     service-url:
       defaultZone: https://hydra-discovery-service.cfapps.io/eureka/
 
 zuul:
   prefix: /api/v2
+  stripPrefix: true
   routes:
-    batch:
-      path: /batches/**
-      stripPrefix: true
-      serviceId: hydra-batch-service
-      url: https://hydra-batch-service.cfapps.io/
-    user:
-      path: /users/**
-      stripPrefix: true
-      serviceId: hydra-user-service
-      url: https://hydra-user-service.cfapps.io/
-    topic:
-      path: /topics/**
-      stripPrefix: true
-      serviceId: hydra-topic-service
-      url: https://hydra-topic-service.cfapps.io/
-    curriculum:
-      path: /curricula/**
-      stripPrefix: true
-      serviceId: hydra-curriculum-service
-      url: https://hydra-curriculum-service.cfapps.io/
+    hydra-batch-service: /batches/**
+    hydra-user-service: /users/**
+    hydra-topic-service: /topics/**
+    hydra-curriculum-service: /curricula/**
