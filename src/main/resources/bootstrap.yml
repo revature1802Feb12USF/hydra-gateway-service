@@ -70,19 +70,7 @@ zuul:
   prefix: /api/v2
   stripPrefix: true
   routes:
-    hydra-batch-service:
-      path: /batches/**
-      stripPrefix: false
-      serviceId: hydra-batch-service
-    hydra-user-service:
-      path: /users/**
-      stripPrefix: false
-      serviceId: hydra-user-service
-    hydra-topic-service:
-      path: /topics/**
-      stripPrefix: false
-      serviceId: hydra-topic-service
-    hydra-curriculum-service:
-      path: /curricula/**
-      stripPrefix: true
-      serviceId: hydra-curriculum-service
+    hydra-batch-service: /batches/**
+    hydra-user-service: /users/**
+    hydra-topic-service: /topics/**
+    hydra-curriculum-service: /curricula/**
