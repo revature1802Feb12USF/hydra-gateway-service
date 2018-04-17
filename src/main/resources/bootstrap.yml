@@ -65,17 +65,17 @@ zuul:
   routes:
     batch:
       path: /batches/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: hydra-batch-service
     user:
       path: /users/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: hydra-user-service
     topic:
       path: /topics/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: hydra-topic-service
     curriculum:
       path: /curricula/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: hydra-curriculum-service
